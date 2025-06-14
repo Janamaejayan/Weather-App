@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.min.css">
+    <script type="module" src="js/main.js"></script>
+</head>
+<body>
+    <main class="fade-in">
+        <h1 class="offscreen">Responsive Weather App powered by the Open Weather A P I</h1>
+        <section class="searchBar fade-in">
+            <form action="" class="searchBar__form" id="searchBar__form" role="search">
+                <label for="searchBar__text" class="offscreen">Enter a new Location</label>
+                <input id = "searchBar__text" class="searchBar__text" type="text" role="searchbox" size="40" autocomplete="off" placeholder="City, State, Country">
+                <button id="searchBar__button" class="searchBar__button button" title="Submit Location" aria-label="Enter Zip Code or City, State, and Country to retrieve Weather conditions"> 
+                    <i class="fa fa-search"></i>
+                    <i class="fas fa-sync fa-spin none"></i>
+                </button>
+            </form>
+        </section>
+        <a href="#currentForecast" class ="skip-link"> Skip to Current Conditions</a>
+        <section class="currentForecast fade-in" id="currentForecast" role="region" aria-labelledby="currentForecast__conditions">
+             <h2 id="currentForecast__location" class = "currentForecast__location">Current Locations</h2>
+            <div class="currentForecast__conditions" id="currentForecast__conditions">
+                <div class="icon" id="icon"><i class = "far fa-sun" aria-hidden="true" title="Clear sky"></i></div>
+                <div class="temp">59°<div class="unit">F</div></div>
+                <div class="desc">Clear Sky</div>
+                <div class="feels">Feels like 53°</div>
+                <div class="maxTemp">High 62°</div>
+                <div class="minTemp">Low 39°</div>
+                <div class="humidity">Humidity 44%</div>
+                <div class="wind">Wind 7 mph</div>
+            </div>
+        </section>
+        <a href="#dailyForecast" class ="skip-link"> Skip to Six day forecast</a>
+        <nav class="navButtons fade-in" id="navButtons">
+            <button id="getLocation" class="button" title="Get Location" aria-label="Get the current weather conditions for your current location">
+                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+            <button id="home" class="button" title="Home Weather" aria-label="Get the current weather conditions for your Home locaiton">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+            <button id="saveLocation" class="button" title="Save Location" aria-label="Save the current location as your Home Location">
+                <i class="fas fa-save"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+            <button id="unit" class="button" title="Toggle Measurements" aria-label="Toggle between metric and imperial measurements unit">
+                <i class="fas fa-chart-bar"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+            <button id="refresh" class="button" title="Refresh Weather" aria-label="Refresh the current weather conditions">
+                <i class="fas fa-sync-alt"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+        </nav>
+        <hr class="fade-in">
+        <section id = "dailyForecast" class="dailyForecast fade-in" role="religion" aria-labelledby="dailyForecast__title">
+            <h2 id="dailyForecast__title" class="dailyForecast__title offscreen">Six Day Forecast</h2>
+             <div id="dailyForecast__contents" class="dailyForecast__contents">
+
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">SUN</p>
+                    <img src="https://openweathermap.org/img/wn/03d.png" alt="scattered clouds"><p class="dayHigh">61°</p><p class="dayLow">44°</p>
+                </div>
+
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">MON</p>
+                    <img src="https://openweathermap.org/img/wn/03d.png" alt="scattered clouds"><p class="dayHigh">61°</p><p class="dayLow">44°</p>
+                </div>
+
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">TUE</p>
+                    <img src="https://openweathermap.org/img/wn/03d.png" alt="scattered clouds"><p class="dayHigh">61°</p><p class="dayLow">44°</p>
+                </div>
+
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">WED</p>
+                    <img src="https://openweathermap.org/img/wn/03d.png" alt="scattered clouds"><p class="dayHigh">61°</p><p class="dayLow">44°</p>
+                </div>
+
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">THU</p>
+                    <img src="https://openweathermap.org/img/wn/03d.png" alt="scattered clouds"><p class="dayHigh">61°</p><p class="dayLow">44°</p>
+                </div>
+
+                <!-- <div class="forecastDay">
+                    <p class="dayAbbreviation">FRI</p>
+                    <img src="https://openweathermap.org/img/wn/03d.png" alt="scattered clouds"><p class="dayHigh">61°</p><p class="dayLow">44°</p>
+                </div> -->
+
+            </div>
+        </section>
+        <p id="confirmation" class="offscreen" aria-live="assertive"></p>
+    </main>
+</body>
+</html>
